@@ -1,0 +1,11 @@
+version: '3'
+services:
+  frontend:
+    # image: node:16.9.1-bullseye-slim
+    image: node
+    volumes:
+      - ./src/swapper:/home/app
+    working_dir: /home/app
+    command: '/bin/bash -c "yarn && yarn dev"'
+    ports:
+      - '3000:3000'
